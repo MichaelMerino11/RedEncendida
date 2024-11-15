@@ -30,15 +30,16 @@ Sigue estos pasos para clonar e instalar el proyecto en tu máquina local:
 2. Instala las dependencias
     npm install
 
-3. Crea un archivo .env en la raíz del proyecto y define las siguientes variables:
-    PUBLIC_VAPID_KEY=***********
-    PRIVATE_VAPID_KEY=***********
-    DB_USER=postgresql
-    DB_HOST=localhost
-    DB_NAME=power_outages
-    DB_PASSWORD=********
-    DB_PORT=5432
+3. **Crea un archivo `.env` en la raíz del proyecto y define las siguientes variables:**
 
+   * `PUBLIC_VAPID_KEY`: Clave pública utilizada para enviar notificaciones push a los suscriptores.
+   * `PRIVATE_VAPID_KEY`: Clave privada correspondiente a la clave pública, utilizada para generar las claves de suscripción.
+   * `DB_USER`: Nombre de usuario para conectarse a la base de datos PostgreSQL.
+   * `DB_HOST`: Dirección del host de la base de datos (localmente suele ser `localhost`).
+   * `DB_NAME`: Nombre de la base de datos a la que te conectarás.
+   * `DB_PASSWORD`: Contraseña asociada al usuario de la base de datos.
+   * `DB_PORT`: Puerto en el que está escuchando el servidor de la base de datos (por defecto, 5432 para PostgreSQL).
+     
 Nota: Las claves VAPID se pueden generar con la biblioteca web-push o mediante un generador en línea de claves de Web Push.
 
 4. Inicializa la base de datos PostgreSQL y crea una tabla para las programaciones de apagones si aún no la has creado.
@@ -66,17 +67,16 @@ La aplicación debería mostrar un mensaje indicando que el servidor está corri
     PostgreSQL: Base de datos para almacenar información de los apagones programados.
     dotenv: Para gestionar las variables de entorno de manera segura.
 
-## Estructura del Proyecto
+## Estructura del proyecto
 
-RedEncendida/
-├── backend/
-│   └── routes/
-│       └── scheduleRoutes.js     # Rutas para la API de apagones programados
-├── node_modules/                 # Dependencias instaladas
-├── .env                          # Variables de entorno
-├── index.js                      # Punto de entrada de la aplicación
-├── package.json                  # Configuración del proyecto y dependencias
-└── README.md                     # Documentación del proyecto
+* **backend/**
+    * **routes/**
+        * `scheduleRoutes.js`: Rutas para la API de apagones programados
+* **node_modules/**: Dependencias instaladas
+* **.env**: Variables de entorno
+* **index.js**: Punto de entrada de la aplicación
+* **package.json**: Configuración del proyecto y dependencias
+* **README.md**: Documentación del proyecto
 
 ## Contribución
 
