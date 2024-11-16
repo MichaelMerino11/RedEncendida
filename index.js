@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const scheduleRoutes = require("./backend/routes/scheduleRoutes");
 
 // Puerto definido
+const app2 = express();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
