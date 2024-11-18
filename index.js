@@ -5,8 +5,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const scheduleRoutes = require("./backend/routes/scheduleRoutes");
 
-// Puerto definido
-const app2 = express();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -34,11 +32,13 @@ app.post("/subscribe", (req, res) => {
   });
 
   // Envía la notificación usando la suscripción y el payload
-  webpush.sendNotification(subscription, payload)
-    .then(response => res.status(200).json({ message: "Notificación enviada" }))
-    .catch(error => {
+  webpush
+    .sendNotification(subscription, payload)
+    .then((response) =>
+      res.status(200).json({ message: "Notificación enviada" })
+    )
+    .catch((error) => {
       console.error("Error al enviar la notificación:", error);
       res.status(500).json({ error: "Error al enviar la notificación" });
     });
 });
-
