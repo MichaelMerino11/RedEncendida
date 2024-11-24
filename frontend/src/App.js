@@ -145,27 +145,6 @@ function App() {
     setIsModalOpen(true);
   };
 
-/*   const handleAddHorario = () => {
-    if (!newHorario.trim()) return;
-    setHorarios((prev) => ({
-      ...prev,
-      [selectedSubstation]: [
-        ...(prev[selectedSubstation] || []),
-        newHorario.trim(),
-      ],
-    }));
-    setNewHorario("");
-  }; */
-
-  /* const handleDeleteHorario = (index) => {
-    setHorarios((prev) => ({
-      ...prev,
-      [selectedSubstation]: prev[selectedSubstation].filter(
-        (_, i) => i !== index
-      ),
-    }));
-  }; */
-
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedSubstation("");
