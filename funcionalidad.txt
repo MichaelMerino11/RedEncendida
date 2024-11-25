@@ -1,3 +1,0 @@
-npm install react-scripts@latest
-npm install webpack@latest
-npm start
